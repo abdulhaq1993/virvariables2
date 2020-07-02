@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+}
+
+.div0 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.div0 div {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.div0 div:nth-of-type(1) {
+  background-color: #b4d815;
+  top: 0;
+  left: 0;
+  animation: l-to-r 1s infinite ease 0s;
+}
+.div0 div:nth-of-type(2) {
+  background-color: #b61c5c;
+  top: calc(50% - 50px);
+  left: 0;
+  animation: l-to-r 1.5s infinite ease 0.5s;
+}
+.div0 div:nth-of-type(3) {
+  background-color: #501daf;
+  top: calc(100% - 100px);
+  left: 0;
+  animation: l-to-r 2s infinite ease 1s;
+}
+
+@keyframes l-to-r {
+  0%, 100% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 100px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

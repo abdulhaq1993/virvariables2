@@ -1,0 +1,49 @@
+@mixin dimensions {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+@mixin color($clr){
+    background-color: $clr;
+}
+@mixin animation($time,$delay){
+    animation: l-to-r $time infinite ease $delay;
+}
+body{
+    margin: 0;
+}
+.div0{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    div{
+        position: absolute;
+        @include dimensions;
+        &:nth-of-type(1){
+            @include color(rgb(180, 216, 21));
+            top: 0;
+            left: 0;
+            @include animation(1s,0s)
+        }
+        &:nth-of-type(2){
+            @include color(rgb(182, 28, 92));
+            top: calc(50% - 50px);
+            left: 0;
+            @include animation(1.5s,.5s)
+        }
+        &:nth-of-type(3){
+            @include color(rgb(80, 29, 175));
+            top: calc(100% - 100px);
+            left: 0;
+            @include animation(2s,1s)
+        }
+    }
+}
+@keyframes l-to-r{
+    0%, 100%{
+        left: 0;
+    }
+    50%{
+        left: calc(100% - 100px);
+    }
+}
